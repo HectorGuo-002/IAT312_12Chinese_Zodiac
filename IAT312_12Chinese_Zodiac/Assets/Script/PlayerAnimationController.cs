@@ -3,13 +3,18 @@ using UnityEngine;
 public class PlayerAnimationController : MonoBehaviour
 {
     private Animator anim;
+    private AudioSource audioSource;
+    public AudioClip attackSound; // 公开变量，让你在 Inspector 里设置音效
+    public AudioClip jumpSound;
     private PlayerController playerController;
     private bool facingRight = true;
     private float originalScaleX;
+    private bool isJumping = false; // ✅ 追踪跳跃状态
 
     void Start()
     {
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         playerController = GetComponent<PlayerController>();
         originalScaleX = Mathf.Abs(transform.localScale.x); // 確保原始 X 軸縮放值為正數
 
@@ -28,6 +33,7 @@ public class PlayerAnimationController : MonoBehaviour
         UpdateMovementAnimation();
         UpdateJumpAnimation();
         FlipSprite();
+        UpdateAttackAnimation(); // ✅ 监听攻击
     }
 
     /// <summary>
@@ -50,6 +56,25 @@ public class PlayerAnimationController : MonoBehaviour
 
         bool isJumping = Input.GetKey(KeyCode.UpArrow); // ✅ 只有當玩家按住上方向鍵時才播放跳躍動畫
         anim.SetBool("isJumping", isJumping);
+        
+        if (jumpSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(jumpSound);
+        }
+    }
+    
+    public void UpdateAttackAnimation()
+    {
+        if (anim == null) return;
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            anim.SetTrigger("attackTrigger"); // ✅ 触发攻击动画
+            if (attackSound != null && audioSource != null)
+            {
+                audioSource.PlayOneShot(attackSound);
+            }
+        }
     }
 
     /// <summary>
@@ -69,5 +94,9 @@ public class PlayerAnimationController : MonoBehaviour
             facingRight = true;
             transform.localScale = new Vector3(-originalScaleX, transform.localScale.y, transform.localScale.z);
         }
+    }
+    public bool IsFacingRight()
+    {
+        return facingRight; // ✅ 返回玩家的朝向状态
     }
 }

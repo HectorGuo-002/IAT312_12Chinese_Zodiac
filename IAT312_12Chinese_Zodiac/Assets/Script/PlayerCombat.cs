@@ -38,7 +38,7 @@ public class PlayerCombat : MonoBehaviour
         Rigidbody2D rb = ink.GetComponent<Rigidbody2D>();
         if (rb == null)
         {
-            Debug.LogError("❌ Rigidbody2D 未找到！请确保 `InkProjectile` 预制体上有 `Rigidbody2D` 组件！");
+            Debug.LogError("❌ Rigidbody2D 未找到！请确保 InkProjectile 预制体上有 Rigidbody2D 组件！");
             return;
         }
 

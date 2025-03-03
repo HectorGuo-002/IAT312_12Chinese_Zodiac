@@ -6,7 +6,7 @@ public class PlayerAnimationController : MonoBehaviour
     private Animator anim;
     private AudioSource audioSource;
     public AudioClip attackSound;
-    public AudioClip jumpSound;
+    private AudioClip jumpSound;
     private PlayerController playerController;
     private bool facingRight = true;
     private float originalScaleX;

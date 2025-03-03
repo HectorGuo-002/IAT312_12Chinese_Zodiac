@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Badending_0: 2556369603745651609
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

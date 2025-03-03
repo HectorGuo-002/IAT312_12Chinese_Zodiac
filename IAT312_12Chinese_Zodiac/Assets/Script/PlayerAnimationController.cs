@@ -1,88 +1,104 @@
 using UnityEngine;
+using System.Collections;
 
 public class PlayerAnimationController : MonoBehaviour
 {
     private Animator anim;
     private AudioSource audioSource;
-    public AudioClip attackSound; // 公开变量，让你在 Inspector 里设置音效
+    public AudioClip attackSound;
     public AudioClip jumpSound;
     private PlayerController playerController;
     private bool facingRight = true;
     private float originalScaleX;
-    private bool isJumping = false; // ✅ 追踪跳跃状态
+    private bool isJumping = false;
+    private bool isAttacking = false; // ✅ 追蹤攻擊狀態
+    private bool wasWalkingBeforeAttack = false; // ✅ 記錄攻擊前是否在行走
 
     void Start()
     {
         anim = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         playerController = GetComponent<PlayerController>();
-        originalScaleX = Mathf.Abs(transform.localScale.x); // 確保原始 X 軸縮放值為正數
+        originalScaleX = Mathf.Abs(transform.localScale.x);
 
-        if (anim == null)
-        {
-            Debug.LogError("❌ Animator 未找到！請確保 Player 物件上有 Animator 組件！");
-        }
-        if (playerController == null)
-        {
-            Debug.LogError("❌ PlayerController 未找到！請確保 Player 物件上有 PlayerController 組件！");
-        }
+        if (anim == null) Debug.LogError("❌ Animator 未找到！請確保 Player 物件上有 Animator 組件！");
+        if (playerController == null) Debug.LogError("❌ PlayerController 未找到！請確保 Player 物件上有 PlayerController 組件！");
     }
 
     void Update()
     {
-        UpdateMovementAnimation();
-        UpdateJumpAnimation();
+        if (!isAttacking) // ✅ **攻擊時不允許行走動畫播放**
+        {
+            UpdateMovementAnimation();
+            UpdateJumpAnimation();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && !isAttacking)
+        {
+            StartCoroutine(PlayAttackAnimation()); // ✅ **啟動攻擊動畫**
+        }
+
         FlipSprite();
-        UpdateAttackAnimation(); // ✅ 监听攻击
     }
 
     /// <summary>
-    /// ✅ 只有當玩家按下 `LeftArrow` 或 `RightArrow` 才播放走路動畫
+    /// ✅ **行走動畫**
     /// </summary>
     public void UpdateMovementAnimation()
     {
-        if (anim == null) return;
-
+        if (anim == null || isAttacking) return; // ✅ **攻擊時不執行行走動畫**
+        
         bool isWalking = Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow);
         anim.SetBool("isWalking", isWalking);
     }
 
     /// <summary>
-    /// ✅ 只有當玩家按住 `UpArrow` 時，才會播放跳躍動畫
+    /// ✅ **跳躍動畫**
     /// </summary>
     public void UpdateJumpAnimation()
     {
-        if (anim == null) return;
+        if (anim == null || isAttacking) return; // ✅ **攻擊時不執行跳躍動畫**
 
-        bool isJumping = Input.GetKey(KeyCode.UpArrow); // ✅ 只有當玩家按住上方向鍵時才播放跳躍動畫
+        bool isJumping = Input.GetKey(KeyCode.UpArrow);
         anim.SetBool("isJumping", isJumping);
-        
-        if (jumpSound != null && audioSource != null)
+
+        if (jumpSound != null && audioSource != null && isJumping)
         {
             audioSource.PlayOneShot(jumpSound);
         }
     }
-    
-    public void UpdateAttackAnimation()
-    {
-        if (anim == null) return;
 
-        if (Input.GetKeyDown(KeyCode.Space))
+    /// <summary>
+    /// ✅ **攻擊動畫**
+    /// </summary>
+    IEnumerator PlayAttackAnimation()
+    {
+        isAttacking = true; // ✅ **鎖住攻擊狀態**
+        wasWalkingBeforeAttack = anim.GetBool("isWalking"); // ✅ 記錄攻擊前是否在行走
+        anim.SetBool("isWalking", false); // ✅ **停止行走動畫**
+        
+        anim.SetTrigger("attackTrigger"); // ✅ **播放攻擊動畫**
+        
+        if (attackSound != null && audioSource != null)
         {
-            anim.SetTrigger("attackTrigger"); // ✅ 触发攻击动画
-            if (attackSound != null && audioSource != null)
-            {
-                audioSource.PlayOneShot(attackSound);
-            }
+            audioSource.PlayOneShot(attackSound);
         }
+
+        // ✅ **等待攻擊動畫播放完畢**
+        yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
+
+        isAttacking = false; // ✅ **恢復正常狀態**
+
+        // ✅ **如果攻擊前正在行走，恢復行走動畫**
+        anim.SetBool("isWalking", wasWalkingBeforeAttack);
     }
 
     /// <summary>
-    /// ✅ 根據玩家的左右移動，翻轉角色
+    /// ✅ **翻轉角色**
     /// </summary>
     public void FlipSprite()
     {
-        if (anim == null) return;
+        if (anim == null || isAttacking) return; // ✅ **攻擊時不翻轉角色方向**
 
         if (Input.GetKey(KeyCode.RightArrow) && !facingRight)
         {
@@ -95,8 +111,9 @@ public class PlayerAnimationController : MonoBehaviour
             transform.localScale = new Vector3(-originalScaleX, transform.localScale.y, transform.localScale.z);
         }
     }
+
     public bool IsFacingRight()
     {
-        return facingRight; // ✅ 返回玩家的朝向状态
+        return facingRight;
     }
 }

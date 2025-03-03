@@ -27,6 +27,13 @@ public class InkProjectile : MonoBehaviour
         {
             float direction = playerTransform.localScale.x > 0 ? 1f : -1f;
             rb.linearVelocity = new Vector2(direction * speed, 0);
+
+            // ✅ **改用 SpriteRenderer.flipX**
+            SpriteRenderer sr = GetComponent<SpriteRenderer>();
+            if (sr != null)
+            {
+                sr.flipX = (direction < 0); // 🔄 **當朝向左時，翻轉圖片**
+            }
         }
         else
         {

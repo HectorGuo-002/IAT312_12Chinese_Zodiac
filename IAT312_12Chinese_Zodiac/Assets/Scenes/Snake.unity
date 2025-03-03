@@ -863,7 +863,7 @@ Transform:
   m_GameObject: {fileID: 38995943}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.3, y: -67.93, z: 0}
+  m_LocalPosition: {x: 18.41, y: -67.89, z: 0}
   m_LocalScale: {x: 0.14, y: 0.14, z: 0.14}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -985,7 +985,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackSound: {fileID: 8300000, guid: 44ee40ec588bac84bb91a4c550230751, type: 3}
-  jumpSound: {fileID: 0}
 --- !u!82 &38995953
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2338,7 +2337,7 @@ PrefabInstance:
     - target: {fileID: 7827879451226854434, guid: 72a8ff626a979094db5b506e650aac86, type: 3}
       propertyPath: levelCompleteUI
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2068177918}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14994,7 +14993,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Collect Goat
+  m_text: 'Collect Snake Rune
 
     Go find other '
   m_isRightToLeft: 0
@@ -15031,7 +15030,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -38046,67 +38045,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &6248951426231690650
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1099432753106138763, guid: c7bf9c88e6d7bbd44834da0769312a62, type: 3}
-      propertyPath: levelCompleteUI
-      value: 
-      objectReference: {fileID: 2068177918}
-    - target: {fileID: 1511199423286090710, guid: c7bf9c88e6d7bbd44834da0769312a62, type: 3}
-      propertyPath: m_Name
-      value: Rune_0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8823752181803479098, guid: c7bf9c88e6d7bbd44834da0769312a62, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -147.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8823752181803479098, guid: c7bf9c88e6d7bbd44834da0769312a62, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -47
-      objectReference: {fileID: 0}
-    - target: {fileID: 8823752181803479098, guid: c7bf9c88e6d7bbd44834da0769312a62, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8823752181803479098, guid: c7bf9c88e6d7bbd44834da0769312a62, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8823752181803479098, guid: c7bf9c88e6d7bbd44834da0769312a62, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8823752181803479098, guid: c7bf9c88e6d7bbd44834da0769312a62, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8823752181803479098, guid: c7bf9c88e6d7bbd44834da0769312a62, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8823752181803479098, guid: c7bf9c88e6d7bbd44834da0769312a62, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8823752181803479098, guid: c7bf9c88e6d7bbd44834da0769312a62, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8823752181803479098, guid: c7bf9c88e6d7bbd44834da0769312a62, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c7bf9c88e6d7bbd44834da0769312a62, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -38216,7 +38154,6 @@ SceneRoots:
   - {fileID: 2068177922}
   - {fileID: 1307394991}
   - {fileID: 174316228}
-  - {fileID: 6248951426231690650}
   - {fileID: 1003256141}
   - {fileID: 1617914522}
   - {fileID: 197781127}

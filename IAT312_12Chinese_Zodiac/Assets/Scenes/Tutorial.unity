@@ -383,6 +383,7 @@ GameObject:
   - component: {fileID: 38995944}
   - component: {fileID: 38995948}
   - component: {fileID: 38995949}
+  - component: {fileID: 38995950}
   m_Layer: 0
   m_Name: FA_TEDDY_Idle_000_0
   m_TagString: Player
@@ -582,6 +583,18 @@ MonoBehaviour:
   inkProjectilePrefab: {fileID: 5706190273448244183, guid: 16e8bee3a1093bc48bb54e3b5c89760b, type: 3}
   firePoint: {fileID: 1143447368}
   inkSpeed: 10
+--- !u!114 &38995950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38995943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6592bff685ccfb8418caf72243893350, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &97694288
 GameObject:
   m_ObjectHideFlags: 0

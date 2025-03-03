@@ -25,6 +25,8 @@ public class GoatAI : MonoBehaviour
             Debug.LogError("❌ Rigidbody2D 未找到！請確保 Goat 物件上有 Rigidbody2D 組件！");
         if (spriteRenderer == null)
             Debug.LogError("❌ SpriteRenderer 未找到！請確保 Goat 物件上有 SpriteRenderer 組件！");
+        if (anim == null)
+            Debug.LogError("❌ Animator 未找到！請確保 Goat 物件上有 Animator 組件！");
 
         directionChangeTimer = directionChangeInterval; // 初始化計時器
     }
@@ -32,9 +34,12 @@ public class GoatAI : MonoBehaviour
     void Update()
     {
         Patrol();
-        if (!anim.GetBool("isRunning"))
+        if (anim != null) // ✅ 防止 NullReferenceException
         {
-            anim.SetBool("isRunning", true);
+            if (!anim.GetBool("isRunning"))
+            {
+                anim.SetBool("isRunning", true);
+            }
         }
     }
 
@@ -57,7 +62,7 @@ public class GoatAI : MonoBehaviour
         movingRight = !movingRight;
         
         // 確保羊的圖片方向與移動方向一致
-        spriteRenderer.flipX = movingRight; 
+        spriteRenderer.flipX = !movingRight; 
 
         Debug.Log($"🐑 Goat 方向翻轉: {(movingRight ? "向右" : "向左")}");
     }

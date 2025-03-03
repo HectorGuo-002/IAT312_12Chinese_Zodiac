@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 38995944}
   - component: {fileID: 38995948}
   - component: {fileID: 38995949}
+  - component: {fileID: 38995950}
   m_Layer: 0
   m_Name: FA_TEDDY_Idle_000_0
   m_TagString: Player
@@ -332,6 +333,18 @@ MonoBehaviour:
   inkProjectilePrefab: {fileID: 5706190273448244183, guid: 16e8bee3a1093bc48bb54e3b5c89760b, type: 3}
   firePoint: {fileID: 1143447368}
   inkSpeed: 10
+--- !u!114 &38995950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38995943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6592bff685ccfb8418caf72243893350, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &112540852
 GameObject:
   m_ObjectHideFlags: 0
@@ -380,7 +393,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -397,8 +410,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -465,8 +478,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -421, y: -37}
-  m_SizeDelta: {x: 237.1373, y: 36.6717}
+  m_AnchoredPosition: {x: -406.45776, y: -2.1}
+  m_SizeDelta: {x: 272.5724, y: 36.6717}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &149646562
 GameObject:
@@ -601,7 +614,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -421, y: -37}
+  m_AnchoredPosition: {x: -388.2, y: 0}
   m_SizeDelta: {x: 237.1373, y: 36.6717}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &180229309
@@ -640,9 +653,15 @@ MonoBehaviour:
   dialogueBox: {fileID: 1692021262}
   dialogueText: {fileID: 1957472415}
   dialogueLines:
-  - This door leads to the SnakeTrial.
-  - ' Are you ready for the challenge? '
-  - Press E to enter!
+  - 'Chen Feng: The place is cold and slippery ...... and the air is filled with
+    poisonous gas, the snake should be nearby. '
+  - 'Snake: Chen Feng, you are here after all. '
+  - 'Chen Feng: Snake, why are you here? Return to your position quickly and resume
+    your orders to the God of Chinese Zodiacs.'
+  - 'Snake: Back to my position? Back to that cage? Don''t try to fool me. You''re
+    all in this together!'
+  - 'Chen Feng: What are you talking about? Come back with me! (Gained copying skill:
+    Snake Slide)'
   levelToLoad: Snake
 --- !u!224 &180229311
 RectTransform:
@@ -1266,9 +1285,15 @@ MonoBehaviour:
   dialogueBox: {fileID: 1531651185}
   dialogueText: {fileID: 1518575078}
   dialogueLines:
-  - This door leads to the Rooster Trial.
-  - ' Are you ready for the challenge? '
-  - Press E to enter!
+  - 'Chen Feng: There seems to be movement in the distance. '
+  - 'Chen Feng: Rooster? Is that you? Where are you?'
+  - 'Rooster: Chen Feng, how dare you come here? You''re all the same, you all have
+    another agenda!'
+  - Chen Feng:What are you talking about? I'm here to save you. you all have another
+    agenda!
+  - 'Rooster: Save me? If it weren''t for you, how could I have ended up here? '
+  - 'Chen Feng: All of us? Whatever, come back with me and we''ll talk. (Gained copying
+    skill: Cock Crow)'
   levelToLoad: Rooster
 --- !u!224 &428546461
 RectTransform:
@@ -1401,9 +1426,29 @@ MonoBehaviour:
   dialogueBox: {fileID: 1808392526}
   dialogueText: {fileID: 149646563}
   dialogueLines:
-  - This door leads to the FInal Boss
-  - 'Do you have enough Rune to break the lock?? '
-  - Press E to enter!
+  - 'Chen Feng: Why are you all so hostile to me? Let''s go. Come back with me and
+    report to the God of Chinese Zodiacs. The rotation of the Zodiac requires each
+    of you to do your duty. '
+  - 'Zodiacs: Each in our own way? Chen Feng, do you really not know why we ended
+    up like this? '
+  - 'Chen Feng: What are you talking about?'
+  - 'Zodiacs: We escaped the Palace of Heaven because we were attacked by the God
+    of Chinese Zodiacs, who wanted to rob us of our power. We can''t go back with
+    you!'
+  - 'Chen Feng: What? That''s impossible! Master would never commit such a despicable
+    act! '
+  - 'Zodiacs: It seems you really don''t know. The Twelve Tatsukune is not the guardian
+    he appears to be, but rather, he takes away our freedom for his own benefit.
+    The ''order'' he spoke of was only to reduce us to a source of power for him.
+    We have no reason to lie to you. If we go back, we will die at his hands. '
+  - 'The God of Chinese Zodiacs: Chen Feng, the mission has been accomplished, why
+    haven''t you returned to me? It seems that you already know.'
+  - 'Chen Feng: Master? Did you really hurt Zodiacs?'
+  - 'The God of Chinese Zodiacs: This is not a harm! Do you realize that without
+    my control, the Palace of Heaven and the earth would be thrown into chaos? Everything
+    I do is to maintain order! Their power can be used for me. It''s a good death
+    for them! Do you want to betray me too? Give up; you can''t change anything!'
+  - 'Chen Feng: Maybe I can''t change everything, but I''ll never be your pawn again! '
   levelToLoad: Boss
 --- !u!224 &483603260
 RectTransform:
@@ -1788,6 +1833,149 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 540712650}
   m_CullTransparentMesh: 1
+--- !u!1 &546470376
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 546470379}
+  - component: {fileID: 546470378}
+  - component: {fileID: 546470377}
+  m_Layer: 0
+  m_Name: "\u3010\u53E4\u98CEbeat\u3011\u53E4\u7B5D+\u7BAB \uFF5C \u8D85\u597D\u542C\u7684\u53E4\u98CE\u7EAF\u97F3\u4E50
+    \uFF5C \u53E4\u98CEBGM \uFF5C \u4E2D\u5F0F\u653E\u677E \uFF5C \u4E2D\u56FD\u98CE\u7EAF"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &546470377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546470376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad6be7a43796e04499be1ff1a6694e65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!82 &546470378
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546470376}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 3974baa1bdedd774f9f79ac4239b542a, type: 3}
+  m_Resource: {fileID: 8300000, guid: 3974baa1bdedd774f9f79ac4239b542a, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &546470379
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546470376}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &547038729
 GameObject:
   m_ObjectHideFlags: 0
@@ -1973,10 +2161,13 @@ MonoBehaviour:
   dialogueBox: {fileID: 1158218318}
   dialogueText: {fileID: 808739404}
   dialogueLines:
-  - This door leads to the Dragon Trial.
-  - This door leads to the Dragon Trial.
-  - ' Are you ready for the challenge? '
-  - Press E to enter!
+  - 'Chen Feng: Water and fire together. It must be a dragon! Dragon! Come back with
+    me!'
+  - 'Dragon: Chen Feng, the God of Chinese Zodiacs  sent you, didn''t he? '
+  - 'Chen Feng: The Master ordered me to bring you back. '
+  - 'Dragon: Ridiculous. You''re all really the same. Don''t try to put me under
+    control again. '
+  - 'Chen Feng: What control? (Gaining copy skill: Dragon Fly)'
   levelToLoad: Dragon
 --- !u!114 &558749350
 MonoBehaviour:
@@ -2691,7 +2882,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -421, y: -37}
+  m_AnchoredPosition: {x: -387.6, y: 0}
   m_SizeDelta: {x: 237.1373, y: 36.6717}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &868047373
@@ -3285,8 +3476,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 1208040086343421634, guid: fe1e25b1eac153f47a1f5f2bd30315d9, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3963,9 +4154,16 @@ MonoBehaviour:
   dialogueBox: {fileID: 1992716955}
   dialogueText: {fileID: 112540853}
   dialogueLines:
-  - This door leads to the Goat Trial.
-  - ' Are you ready for the challenge? '
-  - Press E to enter!
+  - 'Chen Feng: Up ahead is where the goat is, in such rugged terrain that it''s
+    impossible to cross. There it is, the goat!'
+  - 'Chen Feng: Goat! What are you doing here? Zodiac rotation is imminent. Come
+    back with me! '
+  - 'Goat: Chen Feng? I ...... can t remember. It''s quiet here, no fighting, no
+    bondage ...... I don''t want to go back.'
+  - 'Chen Feng: Fighting? What are you talking about? You have your duties.'
+  - 'Goat: Duty? That''s just an excuse and a shackle, I''d rather be lost in! '
+  - 'Chen Feng: No matter how you try to escape, I must take you back. This is Master''s
+    command! (Gained copying skill: Goat Leap) .'
   levelToLoad: Goat
 --- !u!224 &1495115988
 RectTransform:
@@ -4195,8 +4393,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -421, y: -37}
-  m_SizeDelta: {x: 237.1373, y: 36.6717}
+  m_AnchoredPosition: {x: -388.2458, y: -4.7}
+  m_SizeDelta: {x: 269.4457, y: 36.6717}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1531651185
 GameObject:
@@ -4257,8 +4455,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 1208040086343421634, guid: fe1e25b1eac153f47a1f5f2bd30315d9, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4681,8 +4879,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 1208040086343421634, guid: fe1e25b1eac153f47a1f5f2bd30315d9, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4894,8 +5092,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 1208040086343421634, guid: fe1e25b1eac153f47a1f5f2bd30315d9, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5524,7 +5722,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -421, y: -37}
+  m_AnchoredPosition: {x: -389.7, y: 0}
   m_SizeDelta: {x: 237.1373, y: 36.6717}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1992716955
@@ -5586,8 +5784,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 1208040086343421634, guid: fe1e25b1eac153f47a1f5f2bd30315d9, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5764,3 +5962,4 @@ SceneRoots:
   - {fileID: 1275085307}
   - {fileID: 354170001}
   - {fileID: 386525488}
+  - {fileID: 546470379}

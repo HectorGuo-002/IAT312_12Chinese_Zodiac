@@ -52,15 +52,13 @@ public class PlayerController : MonoBehaviour
     public TMP_Text flyCooldownText;
 
     private bool facingRight = true;
-    private Animator anim;
 
     void Start()
     {
-        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         jumpCount = maxJumps;
-        anim.SetBool("isJumping", false);
+
         string sceneName = SceneManager.GetActiveScene().name;
         flyIcon.gameObject.SetActive(false);
         flyCooldownText.gameObject.SetActive(false);
@@ -123,22 +121,6 @@ public class PlayerController : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(move * speed, rb.linearVelocity.y);
         }
-        // ✅ 确保在 `isJumping` 为 false 时，才能播放 Walk 动画
-        if (Mathf.Abs(move) > 0.1f && !anim.GetBool("isJumping")) 
-        {
-            anim.SetBool("isWalking", true);
-        }
-        else 
-        {
-            anim.SetBool("isWalking", false);
-        }
-        
-        if (Input.GetKeyDown(KeyCode.UpArrow) && jumpCount > 0)
-    {
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-        jumpCount--;
-        anim.SetBool("isJumping", true); // ✅ 进入 Jump 动画
-    }
 
         if (move > 0 && !facingRight) Flip();
         else if (move < 0 && facingRight) Flip();
@@ -241,12 +223,11 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         bool wasGrounded = isGrounded;
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
 
-        if (!wasGrounded && isGrounded) 
+        if (!wasGrounded && isGrounded)
         {
             jumpCount = maxJumps;
-            anim.SetBool("isJumping", false); // ✅ 落地后停止 Jump 动画
         }
 
         if (isFlying)

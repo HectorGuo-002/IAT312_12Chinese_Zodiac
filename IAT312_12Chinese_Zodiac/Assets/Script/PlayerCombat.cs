@@ -47,5 +47,15 @@ public class PlayerCombat : MonoBehaviour
 
         // **让子弹朝着角色面向方向移动**
         rb.linearVelocity = new Vector2(direction * inkSpeed, 0);
+        // **获取 Animator 并播放动画**
+                Animator animator = ink.GetComponent<Animator>();
+                if (animator == null)
+                {
+                    Debug.LogError("❌ Animator 未找到！请确保 `InkProjectile` 预制体上有 `Animator` 组件！");
+                    return;
+                }
+        
+                // **触发子弹动画（如果有 Animation 参数）**
+                animator.Play("BulletAnimation"); // BulletAnimation 是你的子弹动画名称
     }
 }

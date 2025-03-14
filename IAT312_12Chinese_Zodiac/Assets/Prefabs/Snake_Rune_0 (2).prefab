@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 673541553
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: -8386645779307496254, guid: c00809fde06afca4e830f38363219942, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cb389a1b84c8ed24f95c967ec4d35282, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,6 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runeKey: Snake
+  levelCompleteUI: {fileID: 0}
 --- !u!61 &1065031501433525666
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -140,7 +141,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 8.32, y: 8.39}
+    oldSize: {x: 7.19, y: 7.34}
     newSize: {x: 8.32, y: 8.39}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

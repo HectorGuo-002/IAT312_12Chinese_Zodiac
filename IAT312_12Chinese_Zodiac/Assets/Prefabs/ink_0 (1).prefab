@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1367415404028238107}
   - component: {fileID: 5582792876735228868}
   - component: {fileID: 3873254522127986929}
+  - component: {fileID: 5546486062646163665}
   m_Layer: 0
   m_Name: ink_0 (1)
   m_TagString: InkProjectile
@@ -79,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 673541553
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: a238e3d7812990a419a1eb4b1e920f55, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5ec38a879eb792b4ca6fe8703fc1f3f1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -181,3 +182,25 @@ MonoBehaviour:
   groundLayers:
     serializedVersion: 2
     m_Bits: 64
+--- !u!95 &5546486062646163665
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5706190273448244183}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: aa5e8c813ce2260409a0518b2a084160, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

@@ -58,7 +58,7 @@ public class SnakeAI : MonoBehaviour
     {
         if (isDead) return;
         isDead = true;
-        Debug.Log($"🐍 `Snake` 受到 {damage} 點傷害，死亡！");
+        Debug.Log($"🐍 Snake 受到 {damage} 點傷害，死亡！");
 
         Die();
     }
@@ -68,7 +68,7 @@ public class SnakeAI : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         patrolSpeed = 0f;
 
-        // **通知 `PoisonCloudManager` 在這個位置生成毒霧**
+        // **通知 PoisonCloudManager 在這個位置生成毒霧**
         PoisonCloudManager.SpawnPoisonCloud(transform.position);
 
         Destroy(gameObject); // **摧毀蛇**

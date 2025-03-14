@@ -1,0 +1,325 @@
+fileFormatVersion: 2
+guid: d69f06e5171eccc4ca2626373c0e6e49
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1888421848419746148
+    second: "boss\u79FB\u52A8-2_0"
+  - first:
+      213: 3825632005125826232
+    second: "boss\u79FB\u52A8-2_1"
+  - first:
+      213: 6633233642945087882
+    second: "boss\u79FB\u52A8-2_2"
+  - first:
+      213: 5813082636580218909
+    second: "boss\u79FB\u52A8-2_3"
+  - first:
+      213: -7605253335444132272
+    second: "boss\u79FB\u52A8-2_4"
+  - first:
+      213: 7688218091687462646
+    second: "boss\u79FB\u52A8-2_5"
+  - first:
+      213: -468913862830266781
+    second: "boss\u79FB\u52A8-2_6"
+  - first:
+      213: -165887197639921763
+    second: "boss\u79FB\u52A8-2_7"
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "boss\u79FB\u52A8-2_0"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1184
+        width: 89
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46145257aa5053a10800000000000000
+      internalID: 1888421848419746148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "boss\u79FB\u52A8-2_1"
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 1204
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b6e3e22a00671530800000000000000
+      internalID: 3825632005125826232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "boss\u79FB\u52A8-2_2"
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 1148
+        width: 136
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8989e79adafd0c50800000000000000
+      internalID: 6633233642945087882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "boss\u79FB\u52A8-2_3"
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 62
+        width: 1599
+        height: 1943
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d18ea53ebd73ca050800000000000000
+      internalID: 5813082636580218909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "boss\u79FB\u52A8-2_4"
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 1181
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05e6ff1c266b47690800000000000000
+      internalID: -7605253335444132272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "boss\u79FB\u52A8-2_5"
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 1124
+        width: 40
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f643c6de9902ba60800000000000000
+      internalID: 7688218091687462646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "boss\u79FB\u52A8-2_6"
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 1156
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 366eebf73551e79f0800000000000000
+      internalID: -468913862830266781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "boss\u79FB\u52A8-2_7"
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 1143
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9f23eff876a2bdf0800000000000000
+      internalID: -165887197639921763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      "boss\u79FB\u52A8-2_0": 1888421848419746148
+      "boss\u79FB\u52A8-2_1": 3825632005125826232
+      "boss\u79FB\u52A8-2_2": 6633233642945087882
+      "boss\u79FB\u52A8-2_3": 5813082636580218909
+      "boss\u79FB\u52A8-2_4": -7605253335444132272
+      "boss\u79FB\u52A8-2_5": 7688218091687462646
+      "boss\u79FB\u52A8-2_6": -468913862830266781
+      "boss\u79FB\u52A8-2_7": -165887197639921763
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

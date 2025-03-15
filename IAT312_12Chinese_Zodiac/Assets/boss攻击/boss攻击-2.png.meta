@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "boss\u653B\u51FB-2_0": -1447136096241820908
+      "boss\u653B\u51FB-2_1": -1362153491779378375
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

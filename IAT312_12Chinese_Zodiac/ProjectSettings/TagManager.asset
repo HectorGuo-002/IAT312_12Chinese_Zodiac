@@ -9,6 +9,7 @@ TagManager:
   - Gong
   - InkProjectile
   - Boss
+  - Spike
   layers:
   - Default
   - TransparentFX

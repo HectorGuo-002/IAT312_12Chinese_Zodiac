@@ -409,7 +409,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "boss\u653B\u51FB-4_0": 6578555631944905462
+      "boss\u653B\u51FB-4_1": -3682962449280123913
+      "boss\u653B\u51FB-4_10": -2460014726824252435
+      "boss\u653B\u51FB-4_11": 2473560250692184578
+      "boss\u653B\u51FB-4_2": -5694466907673426954
+      "boss\u653B\u51FB-4_3": 4711024104222594502
+      "boss\u653B\u51FB-4_4": -1515092595253495524
+      "boss\u653B\u51FB-4_5": -5974246937847415475
+      "boss\u653B\u51FB-4_6": -4632015148333292082
+      "boss\u653B\u51FB-4_7": 5672021212863559934
+      "boss\u653B\u51FB-4_8": -1074567579692833669
+      "boss\u653B\u51FB-4_9": -195582494523721713
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

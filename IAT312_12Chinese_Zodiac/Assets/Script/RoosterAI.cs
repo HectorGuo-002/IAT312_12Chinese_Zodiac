@@ -49,22 +49,22 @@ public class RoosterAI : MonoBehaviour
     {
         if (player == null) return; // ✅ 避免 `player` 為 `null` 時拋出錯誤
 
-        Patrol(); // ✅ 讓雞在平台上來回移動
+        // Patrol(); ✅ 讓雞在平台上來回移動
         ShootAtPlayer(); // ✅ 讓雞從一開始就開始發射元氣彈
     }
 
-    void Patrol()
-    {
-        // ✅ 讓雞在平台上左右來回移動
-        rb.linearVelocity = new Vector2(movingRight ? patrolSpeed : -patrolSpeed, rb.linearVelocity.y);
-
-        // ✅ 檢測前方是否還有地面，否則回頭
-        if (!IsGroundAhead() && Time.time > nextFlipTime)
-        {
-            Flip();
-            nextFlipTime = Time.time + flipCooldownTime; // ✅ 設定翻轉冷卻時間，避免瘋狂翻轉
-        }
-    }
+    // void Patrol()
+    // {
+    //     // ✅ 讓雞在平台上左右來回移動
+    //     rb.linearVelocity = new Vector2(movingRight ? patrolSpeed : -patrolSpeed, rb.linearVelocity.y);
+    //
+    //     // ✅ 檢測前方是否還有地面，否則回頭
+    //     if (!IsGroundAhead() && Time.time > nextFlipTime)
+    //     {
+    //         Flip();
+    //         nextFlipTime = Time.time + flipCooldownTime; // ✅ 設定翻轉冷卻時間，避免瘋狂翻轉
+    //     }
+    // }
 
     bool IsGroundAhead()
     {

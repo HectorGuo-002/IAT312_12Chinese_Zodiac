@@ -3,7 +3,6 @@ using UnityEngine;
 public class RuneManager : MonoBehaviour
 {
     public static RuneManager instance;
-
     private int collectedRunes = 0; // ✅ 已收集的符文數量
 
     void Awake()
@@ -22,7 +21,7 @@ public class RuneManager : MonoBehaviour
     public void CollectRune()
     {
         collectedRunes++;
-        Debug.Log($"🟢 已收集 {collectedRunes}/4 個符文");
+        Debug.Log($"🟢 已收集 {collectedRunes} 個符文");
 
         if (collectedRunes >= 4)
         {

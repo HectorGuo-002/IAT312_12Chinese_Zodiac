@@ -8,12 +8,12 @@ public class WinCondition : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log($"🟠 碰到符文：{runeName}");
+            Debug.Log($"🟠 玩家獲得符文：{runeName}");
 
             if (RuneManager.instance != null)
             {
                 RuneManager.instance.CollectRune();
-                Destroy(gameObject); // ✅ 符文被收集後消失
+                Destroy(gameObject); // ✅ 獲得符文後消失
             }
         }
     }

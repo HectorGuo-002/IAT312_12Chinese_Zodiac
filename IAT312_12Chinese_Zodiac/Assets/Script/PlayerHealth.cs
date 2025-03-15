@@ -62,4 +62,12 @@ public class PlayerHealth : MonoBehaviour
         Time.timeScale = 1f; // 恢復遊戲
         SceneManager.LoadScene("LevelSelect");
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Spike")) // ✅ 確保地刺的 Tag 設為 "Spike"
+        {
+            Debug.Log("☠ 玩家觸碰到地刺，直接死亡！");
+            Die(); // 直接執行死亡方法
+        }
+    }
 }

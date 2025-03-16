@@ -90,7 +90,47 @@ public class PlayerController : MonoBehaviour
             flyIcon.gameObject.SetActive(true);  // ✅ 只在 Dragon 地圖顯示飛行 UI
             flyCooldownText.gameObject.SetActive(true);
         }
-        else if (sceneName == "Boss" || sceneName == "Tutorial")
+        else if (sceneName == "Boss")
+        {
+            if (PlayerPrefs.GetInt("GoatRune", 0) == 1)
+            {
+                maxJumps = 2; // ✅ **允許二段跳**
+                Debug.Log("🐐 已解鎖二段跳！");
+            }
+            if (PlayerPrefs.GetInt("SnakeRune", 0) == 1)
+            {
+                canDash = true; // ✅ **允許 Dash**
+                dashIcon.gameObject.SetActive(true);
+                dashCooldownText.gameObject.SetActive(true);
+                Debug.Log("🐍 已解鎖 Dash！");
+            }
+            if (PlayerPrefs.GetInt("RoosterRune", 0) == 1)
+            {
+                canUseNightVision = true; // ✅ **允許夜視模式**
+                nightVisionIcon.gameObject.SetActive(true);
+                nightVisionCooldownText.gameObject.SetActive(true);
+                Debug.Log("🐓 已解鎖夜視模式！");
+            }
+            if (PlayerPrefs.GetInt("DragonRune", 0) == 1)
+            {
+                canFly = true; // ✅ **允許飛行**
+                flyIcon.gameObject.SetActive(true);
+                flyCooldownText.gameObject.SetActive(true);
+                Debug.Log("🐉 已解鎖飛行！");
+            }
+            else
+            {
+                maxJumps = 1;
+                flyIcon.gameObject.SetActive(false);
+                flyCooldownText.gameObject.SetActive(false);
+                dashIcon.gameObject.SetActive(false);
+                dashCooldownText.gameObject.SetActive(false);
+                nightVisionIcon.gameObject.SetActive(false);
+                nightVisionCooldownText.gameObject.SetActive(false);
+            }
+
+        }
+        else if (sceneName == "Tutorial")
         {
             canDash = true;
             canUseNightVision = true;

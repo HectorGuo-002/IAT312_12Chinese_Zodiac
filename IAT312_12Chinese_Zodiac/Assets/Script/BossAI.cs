@@ -19,14 +19,15 @@ public class BossAI : MonoBehaviour
     private bool movingUp = true; // ✅ 控制 Boss 上下移動方向
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer; // ✅ 控制 Boss 翻轉朝向
+    public bool isPaused = false;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>(); // ✅ 取得 `SpriteRenderer`
+        spriteRenderer = GetComponent<SpriteRenderer>(); // ✅ 取得 SpriteRenderer
         if (rb == null)
         {
-            Debug.LogError("❌ Rigidbody2D 未找到！請確保 `FinalBoss_0` 物件有 Rigidbody2D！");
+            Debug.LogError("❌ Rigidbody2D 未找到！請確保 FinalBoss_0 物件有 Rigidbody2D！");
             return;
         }
 
@@ -41,12 +42,19 @@ public class BossAI : MonoBehaviour
         }
         else
         {
-            Debug.LogError("❌ `Player` 未找到！請確保場景中有 `Player`，且 `Tag` 設為 `Player`！");
+            Debug.LogError("❌ Player 未找到！請確保場景中有 Player，且 Tag 設為 Player！");
         }
     }
 
     void Update()
     {
+        if (isPaused)
+        {
+            Debug.Log("👹 Boss 暫停攻擊！");
+            return; // ✅ **時間暫停時不攻擊**
+        }
+
+     
         if (player == null) return;
 
         FlipTowardsPlayer(); // ✅ 讓 Boss 永遠面向玩家
@@ -65,7 +73,7 @@ public class BossAI : MonoBehaviour
         {
             float direction = -10f; // ✅ Boss 永遠朝左撤退（固定貼在畫面右邊）
 
-            // ✅ **確保 Boss 不會超出 `boundaryRight`**
+            // ✅ **確保 Boss 不會超出 boundaryRight**
             if (transform.position.x > boundaryRight)
             {
                 transform.position = new Vector2(boundaryRight, transform.position.y);
@@ -83,7 +91,7 @@ public class BossAI : MonoBehaviour
 
     void MoveVertically()
     {
-        // ✅ **讓 Boss 在 `initialY ± verticalMoveRange` 之間來回移動**
+        // ✅ **讓 Boss 在 initialY ± verticalMoveRange 之間來回移動**
         if (movingUp)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, verticalMoveSpeed);
@@ -113,6 +121,7 @@ public class BossAI : MonoBehaviour
 
     void ShootAtPlayer()
     {
+        if (isPaused) return;
         if (Time.time > nextFireTime && energyBallPrefab != null && firePoint != null && player != null)
         {
             GameObject energyBall = Instantiate(energyBallPrefab, firePoint.position, Quaternion.identity);
@@ -127,5 +136,13 @@ public class BossAI : MonoBehaviour
             Debug.Log("🔥 Boss 發射元氣彈！");
             nextFireTime = Time.time + fireCooldown;
         }
+    }
+    
+    public void ResumeAfterPause()
+    {
+        isPaused = false;
+        nextFireTime = Time.time; // ✅ **立即恢復攻擊冷卻**
+        Debug.Log("👹 Boss 恢復攻擊！");
+        ShootAtPlayer(); // ✅ **立即嘗試攻擊**
     }
 }

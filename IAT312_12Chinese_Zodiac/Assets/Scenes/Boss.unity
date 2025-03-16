@@ -164,8 +164,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  globalLight: {fileID: 0}
-  nightVisionDuration: 5
+  pauseTimeDuration: 5
   dashSpeed: 15
   dashDuration: 0.2
   canFly: 1
@@ -872,7 +871,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d4971e1688e9ab46b5cc04e0595fd1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  baseHealth: 100
+  maxHealth: 0
   bossDialogue: {fileID: 177348395}
   healthSlider: {fileID: 1660855080}
 --- !u!114 &65066992
@@ -896,6 +896,7 @@ MonoBehaviour:
   energyBallSpeed: 20
   firePoint: {fileID: 2098310078}
   energyBallPrefab: {fileID: 6495179754172688259, guid: c1cd81cae430cfb45ba444bf43a4989e, type: 3}
+  isPaused: 0
 --- !u!50 &65066993
 Rigidbody2D:
   serializedVersion: 5

@@ -46,7 +46,7 @@ public class LevelGate : MonoBehaviour
                 {
                     Debug.Log("🚫 你需要至少 1 個符文才能進入最終 BOSS 戰！");
                 }
-                if (runeCount >= 1) // ✅ **必須至少收集 1 個符文才能進入**
+                if (runeCount >= 2) // ✅ **必須至少收集 1 個符文才能進入**
                 {
                     hasStartedDialogue = true;
                     dialogueSystem.StartDialogue();

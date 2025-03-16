@@ -21,11 +21,12 @@ public class PlayerController : MonoBehaviour
     [Header("地面檢測")] public Transform groundCheck;
     public LayerMask groundLayer;
 
-    [Header("夜視模式（雞關卡）")] public Light2D globalLight;
-    public float nightVisionDuration = 5f;
-    private float nightVisionCooldown = 0f;
-    private bool canUseNightVision = false;
-    private bool isNightVisionActive = false;
+    [Header("夜視模式（雞關卡）")] 
+    public float pauseTimeDuration = 5f; // ✅ **時間暫停 2 秒**
+    private float pauseTimeCooldown = 0f;
+    private bool canPauseTime = false;
+    private bool isTimePaused = false;
+    private GameObject[] pausables;
 
     [Header("蛇關卡 - Dash（地面 & 空中衝刺）")] private bool canDash = false;
     private bool isDashing = false;
@@ -58,6 +59,15 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         jumpCount = maxJumps;
+        
+        if (pausables == null || pausables.Length == 0)
+        {
+            Debug.LogWarning("⚠️ 沒有找到任何帶有 'Enemy' Tag 的物件！請檢查場景內敵人的 Tag 設定！");
+        }
+        else
+        {
+            Debug.Log("✅ 找到 " + pausables.Length + " 個可暫停的物件。");
+        }
 
         string sceneName = SceneManager.GetActiveScene().name;
         flyIcon.gameObject.SetActive(false);
@@ -69,10 +79,11 @@ public class PlayerController : MonoBehaviour
 
         if (sceneName == "Rooster")
         {
-            globalLight.intensity = 0.005f;
-            canUseNightVision = true;
+            canPauseTime = true;
             nightVisionIcon.gameObject.SetActive(true);
             nightVisionCooldownText.gameObject.SetActive(true);
+            pausables = GameObject.FindGameObjectsWithTag("Enemy");
+            StartCoroutine(InitializePausables());
         }
         else if (sceneName == "Goat")
         {
@@ -92,48 +103,44 @@ public class PlayerController : MonoBehaviour
         }
         else if (sceneName == "Boss")
         {
-            if (PlayerPrefs.GetInt("GoatRune", 0) == 1)
+            maxJumps = 1;
+            canFly = false;
+            canDash = false;
+            canPauseTime = false;
+            if (PlayerPrefs.GetInt("Goat", 0) == 1)
             {
                 maxJumps = 2; // ✅ **允許二段跳**
                 Debug.Log("🐐 已解鎖二段跳！");
             }
-            if (PlayerPrefs.GetInt("SnakeRune", 0) == 1)
+            if (PlayerPrefs.GetInt("Snake", 0) == 1)
             {
                 canDash = true; // ✅ **允許 Dash**
                 dashIcon.gameObject.SetActive(true);
                 dashCooldownText.gameObject.SetActive(true);
                 Debug.Log("🐍 已解鎖 Dash！");
             }
-            if (PlayerPrefs.GetInt("RoosterRune", 0) == 1)
+            if (PlayerPrefs.GetInt("Rooster", 0) == 1)
             {
-                canUseNightVision = true; // ✅ **允許夜視模式**
+                canPauseTime = true; // ✅ **允許夜視模式**
                 nightVisionIcon.gameObject.SetActive(true);
                 nightVisionCooldownText.gameObject.SetActive(true);
+                pausables = GameObject.FindGameObjectsWithTag("Boss");
                 Debug.Log("🐓 已解鎖夜視模式！");
             }
-            if (PlayerPrefs.GetInt("DragonRune", 0) == 1)
+            if (PlayerPrefs.GetInt("Dragon", 0) == 1)
             {
                 canFly = true; // ✅ **允許飛行**
                 flyIcon.gameObject.SetActive(true);
                 flyCooldownText.gameObject.SetActive(true);
                 Debug.Log("🐉 已解鎖飛行！");
             }
-            else
-            {
-                maxJumps = 1;
-                flyIcon.gameObject.SetActive(false);
-                flyCooldownText.gameObject.SetActive(false);
-                dashIcon.gameObject.SetActive(false);
-                dashCooldownText.gameObject.SetActive(false);
-                nightVisionIcon.gameObject.SetActive(false);
-                nightVisionCooldownText.gameObject.SetActive(false);
-            }
+            
 
         }
         else if (sceneName == "Tutorial")
         {
             canDash = true;
-            canUseNightVision = true;
+            canPauseTime = true;
             maxJumps = 2;
             canFly = true;
             flyIcon.gameObject.SetActive(true);
@@ -146,11 +153,7 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        if (globalLight == null)
-        {
-            globalLight = Object.FindAnyObjectByType<Light2D>();
-
-        }
+   
     }
 
     void Update()
@@ -172,9 +175,16 @@ public class PlayerController : MonoBehaviour
         }
 
         // ✅ **夜視技能冷卻 & 觸發**
-        if (canUseNightVision && Input.GetKeyDown(KeyCode.N) && nightVisionCooldown <= 0)
+        if (canPauseTime && Input.GetKeyDown(KeyCode.N) && pauseTimeCooldown <= 0)
         {
-            ToggleNightVision();
+            Debug.Log("🎮 按下 N - 嘗試觸發時間暫停");
+            StartCoroutine(PauseTime());
+        }
+        // ✅ **確保冷卻時間遞減**
+        if (pauseTimeCooldown > 0)
+        {
+            pauseTimeCooldown -= Time.deltaTime;
+            if (pauseTimeCooldown < 0) pauseTimeCooldown = 0; // ✅ **防止負數**
         }
 
         if (canDash && Input.GetKeyDown(KeyCode.LeftShift) && dashCooldown <= 0)
@@ -247,9 +257,10 @@ public class PlayerController : MonoBehaviour
 
 
         // ✅ **確保冷卻時間減少**
-        if (nightVisionCooldown > 0)
+        if (pauseTimeCooldown > 0)
         {
-            nightVisionCooldown -= Time.deltaTime;
+            pauseTimeCooldown -= Time.deltaTime;
+            Debug.Log("⏳ 時間暫停冷卻: " + pauseTimeCooldown);
         }
 
         if (dashCooldown > 0)
@@ -321,31 +332,81 @@ public class PlayerController : MonoBehaviour
 
 
     // ✅ **夜視模式開關**
-    void ToggleNightVision()
+    IEnumerator PauseTime()
     {
-        if (!isNightVisionActive)
+        if (pauseTimeCooldown > 0) yield break;
+        Debug.Log("⏳ 時間暫停啟動！");
+
+        isTimePaused = true;
+        pauseTimeCooldown = pauseTimeDuration + 3f;
+
+        RoosterAI[] roosterEnemies = FindObjectsOfType<RoosterAI>();
+        BossAI[] bossEnemies = FindObjectsOfType<BossAI>(); // ✅ 確保找到 Boss
+
+        foreach (RoosterAI enemy in roosterEnemies)
         {
-            isNightVisionActive = true;
-            globalLight.intensity = 1.5f;
-            globalLight.color = new Color(1f, 1f, 0.8f);
-            nightVisionCooldown = nightVisionDuration + 3f; // ✅ 設定冷卻時間（夜視時間 + 3 秒冷卻）
-            StartCoroutine(NightVisionTimer());
+            enemy.isPaused = true;
+            Debug.Log("🐓 " + enemy.name + " AI 立即暫停, isPaused = " + enemy.isPaused);
+        }
+
+        foreach (BossAI boss in bossEnemies)
+        {
+            boss.isPaused = true;
+            Debug.Log("👹 " + boss.name + " Boss 立即暫停, isPaused = " + boss.isPaused);
+        }
+
+        Debug.Log("🕒 等待 " + pauseTimeDuration + " 秒");
+        yield return new WaitForSecondsRealtime(pauseTimeDuration);
+
+        foreach (RoosterAI enemy in roosterEnemies)
+        {
+            enemy.ResumeAfterPause();
+            Debug.Log("🐓 " + enemy.name + " AI 恢復, isPaused = " + enemy.isPaused);
+        }
+
+        foreach (BossAI boss in bossEnemies)
+        {
+            boss.ResumeAfterPause();
+            Debug.Log("👹 " + boss.name + " Boss 恢復, isPaused = " + boss.isPaused);
+        }
+
+        isTimePaused = false;
+        Debug.Log("▶ 時間恢復！");
+    }
+    
+    IEnumerator InitializePausables()
+    {
+        yield return new WaitForSeconds(1f); // ✅ 稍微延遲 0.1 秒，確保場景物件已經載入
+
+        pausables = GameObject.FindGameObjectsWithTag("Boss");
+
+        if (pausables == null || pausables.Length == 0)
+        {
+            Debug.LogWarning("⚠️ 沒有找到任何帶有 'Enemy' Tag 的物件！請檢查場景內敵人的 Tag 設定！");
+        }
+        else
+        {
+            Debug.Log("✅ 找到 " + pausables.Length + " 個可暫停的物件：" + pausables.Length);
+            foreach (var obj in pausables)
+            {
+                Debug.Log("🛑 " + obj.name + " 被加入暫停系統");
+            }
         }
     }
 
-    public float GetNightVisionCooldown()
+    public float GetPauseTimeCooldown()
     {
-        return nightVisionCooldown; // ✅ 允許外部腳本讀取 nightVisionCooldown
+        return pauseTimeCooldown; // ✅ 允許外部腳本讀取 nightVisionCooldown
     }
 
     // ✅ **夜視模式 5 秒後關閉**
-    IEnumerator NightVisionTimer()
-    {
-        yield return new WaitForSeconds(nightVisionDuration);
-        globalLight.intensity = 0.005f;
-        globalLight.color = Color.white;
-        isNightVisionActive = false;
-    }
+    // IEnumerator NightVisionTimer()
+    // {
+    //     yield return new WaitForSeconds(nightVisionDuration);
+    //     globalLight.intensity = 0.005f;
+    //     globalLight.color = Color.white;
+    //     isNightVisionActive = false;
+    // }
 
     // ✅ **Shift 觸發 Dash（地面 & 空中）**
     IEnumerator Dash()
@@ -394,7 +455,7 @@ public class PlayerController : MonoBehaviour
     }
     void UpdateCooldownUI()
     {
-        UpdateSkillUI(nightVisionIcon, nightVisionCooldownText, ref nightVisionCooldown);
+        UpdateSkillUI(nightVisionIcon, nightVisionCooldownText, ref pauseTimeCooldown);
         UpdateSkillUI(dashIcon, dashCooldownText, ref dashCooldown);
         if (isFlying)
         {

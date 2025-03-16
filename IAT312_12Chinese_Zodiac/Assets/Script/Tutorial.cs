@@ -20,7 +20,7 @@ public class Tutorial : MonoBehaviour
         if (player != null && globalLight != null)
         {
             // ✅ 使用 `GetNightVisionCooldown()` 來讀取冷卻時間
-            if (player.GetNightVisionCooldown() <= 0 && globalLight.intensity != 1)
+            if (player.GetPauseTimeCooldown() <= 0 && globalLight.intensity != 1)
             {
                 globalLight.intensity = 1; // ✅ 恢復光亮度
             }

@@ -27,7 +27,7 @@ public class PoisonArea : MonoBehaviour
     {
         if (playerInside && Time.time >= nextDamageTime)
         {
-            PlayerHealth playerHealth = FindObjectOfType<PlayerHealth>(); // ✅ 获取玩家生命值组件
+            PlayerHealth playerHealth = FindAnyObjectByType<PlayerHealth>(); // ✅ 获取玩家生命值组件
             if (playerHealth != null)
             {
                 playerHealth.TakeDamage(damage);

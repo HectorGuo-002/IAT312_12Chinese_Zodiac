@@ -35,22 +35,40 @@ public class LevelGate : MonoBehaviour
             {
                 if (RuneManager.instance == null)
                 {
-                    Debug.LogError("❌ `RuneManager` 未初始化，請確保 `RuneManager` 存在！");
+                    Debug.LogError("❌ `RuneManager` 未初始化，請確保場景內有 `RuneManager`！");
                     return;
                 }
-            
-                int runeCount = RuneManager.instance.GetCollectedRunes();
-                Debug.Log($"🟢 符文數量檢查: {runeCount} / 1");
-            
+
+                int runeCount = PlayerPrefs.GetInt("CollectedRunes", 0); // **直接讀取 PlayerPrefs**
+                Debug.Log($"🟢 符文數量檢查 (LevelGate): {runeCount} / 1");
+
+                if (isBossGate && runeCount < 1)
+                {
+                    Debug.Log("🚫 你需要至少 1 個符文才能進入最終 BOSS 戰！");
+                }
                 if (runeCount >= 1) // ✅ **必須至少收集 1 個符文才能進入**
                 {
                     hasStartedDialogue = true;
                     dialogueSystem.StartDialogue();
                 }
-                else
-                {
-                    Debug.Log("🚫 你需要至少 1 個符文才能進入最終 BOSS 戰！");
-                }
+                // if (RuneManager.instance == null)
+                // {
+                //     Debug.LogError("❌ `RuneManager` 未初始化，請確保 `RuneManager` 存在！");
+                //     return;
+                // }
+                //
+                // int runeCount = RuneManager.instance.GetCollectedRunes();
+                // Debug.Log($"🟢 符文數量檢查: {runeCount} / 1");
+                //
+                // if (runeCount >= 1) // ✅ **必須至少收集 1 個符文才能進入**
+                // {
+                //     hasStartedDialogue = true;
+                //     dialogueSystem.StartDialogue();
+                // }
+                // else
+                // {
+                //     Debug.Log("🚫 你需要至少 1 個符文才能進入最終 BOSS 戰！");
+                // }
             }
             else // ✅ **普通門可以直接進入**
             {

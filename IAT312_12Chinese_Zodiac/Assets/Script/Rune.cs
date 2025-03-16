@@ -21,7 +21,11 @@ public class Rune : MonoBehaviour
 
             // ✅ 記錄符文已收集
             PlayerPrefs.SetInt(runeKey, 1);
+            PlayerPrefs.SetInt("CollectedRunes", PlayerPrefs.GetInt("CollectedRunes", 0) + 1);
             PlayerPrefs.Save();
+
+            Debug.Log($"💾 PlayerPrefs 存儲檢查: {runeKey} = {PlayerPrefs.GetInt(runeKey, 0)}");
+            Debug.Log($"💾 符文數量存儲檢查: {PlayerPrefs.GetInt("CollectedRunes", 0)}");
 
             // ✅ 顯示過關 UI
             if (levelCompleteUI != null)

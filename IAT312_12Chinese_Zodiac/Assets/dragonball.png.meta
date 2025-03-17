@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      dragonball_0: -1553812787603675035
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

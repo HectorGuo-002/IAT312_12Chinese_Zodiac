@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: 9e5008d5ef3e2ca41b306699c75ff130
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6275480590382818357
+    second: Zodiacs_0
+  - first:
+      213: -2355907952011336983
+    second: Zodiacs_1
+  - first:
+      213: -8636973293319973270
+    second: Zodiacs_2
+  - first:
+      213: -6140245515113137778
+    second: Zodiacs_3
+  - first:
+      213: -6172301564732752750
+    second: Zodiacs_4
+  - first:
+      213: -9190082980501612999
+    second: Zodiacs_5
+  - first:
+      213: -94428097393073738
+    second: Zodiacs_6
+  - first:
+      213: 6012969809001755554
+    second: Zodiacs_7
+  - first:
+      213: -4971272775257187665
+    second: Zodiacs_8
+  - first:
+      213: 3667821449094221547
+    second: Zodiacs_9
+  - first:
+      213: -1456798672696613935
+    second: Zodiacs_10
+  - first:
+      213: 2791275517262585984
+    second: Zodiacs_11
+  - first:
+      213: 4659546742126309981
+    second: Zodiacs_12
+  - first:
+      213: -7810273503214176667
+    second: Zodiacs_13
+  - first:
+      213: -5407285666212978070
+    second: Zodiacs_14
+  - first:
+      213: 4897417607684236693
+    second: Zodiacs_15
+  - first:
+      213: -5867328797880550054
+    second: Zodiacs_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Zodiacs_0
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 494
+        width: 756
+        height: 521
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53460a8195cf61750800000000000000
+      internalID: 6275480590382818357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zodiacs_1
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 950
+        width: 7
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e2a8d423322e4fd0800000000000000
+      internalID: -2355907952011336983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zodiacs_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 915
+        width: 8
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a669025ec8e432880800000000000000
+      internalID: -8636973293319973270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zodiacs_3
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 750
+        width: 7
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e89fef58c3779caa0800000000000000
+      internalID: -6140245515113137778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zodiacs_4
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 581
+        width: 444
+        height: 283
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29c348bdd64975aa0800000000000000
+      internalID: -6172301564732752750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zodiacs_5
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 578
+        width: 55
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93696da6834467080800000000000000
+      internalID: -9190082980501612999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zodiacs_6
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 577
+        width: 8
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b1e11e452680bef0800000000000000
+      internalID: -94428097393073738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zodiacs_7
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 577
+        width: 23
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a3b2b6ee2c527350800000000000000
+      internalID: 6012969809001755554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zodiacs_8
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 578
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faa9935ffbd720bb0800000000000000
+      internalID: -4971272775257187665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zodiacs_9
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 578
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: beec1dccc28b6e230800000000000000
+      internalID: 3667821449094221547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zodiacs_10
+      rect:
+        serializedVersion: 2
+        x: 1058
+        y: 578
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d368ac535968cbe0800000000000000
+      internalID: -1456798672696613935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zodiacs_11
+      rect:
+        serializedVersion: 2
+        x: 1114
+        y: 581
+        width: 129
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0806eac4b4a9cb620800000000000000
+      internalID: 2791275517262585984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zodiacs_12
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 497
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5274ca13190aa040800000000000000
+      internalID: 4659546742126309981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zodiacs_13
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 507
+        width: 9
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 566f54221a55c9390800000000000000
+      internalID: -7810273503214176667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zodiacs_14
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 0
+        width: 627
+        height: 547
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a62605ae55675f4b0800000000000000
+      internalID: -5407285666212978070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zodiacs_15
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 31
+        width: 437
+        height: 397
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59523c6dd5f17f340800000000000000
+      internalID: 4897417607684236693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zodiacs_16
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 225
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5df8e57b8f039ea0800000000000000
+      internalID: -5867328797880550054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Zodiacs_0: 6275480590382818357
+      Zodiacs_1: -2355907952011336983
+      Zodiacs_10: -1456798672696613935
+      Zodiacs_11: 2791275517262585984
+      Zodiacs_12: 4659546742126309981
+      Zodiacs_13: -7810273503214176667
+      Zodiacs_14: -5407285666212978070
+      Zodiacs_15: 4897417607684236693
+      Zodiacs_16: -5867328797880550054
+      Zodiacs_2: -8636973293319973270
+      Zodiacs_3: -6140245515113137778
+      Zodiacs_4: -6172301564732752750
+      Zodiacs_5: -9190082980501612999
+      Zodiacs_6: -94428097393073738
+      Zodiacs_7: 6012969809001755554
+      Zodiacs_8: -4971272775257187665
+      Zodiacs_9: 3667821449094221547
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

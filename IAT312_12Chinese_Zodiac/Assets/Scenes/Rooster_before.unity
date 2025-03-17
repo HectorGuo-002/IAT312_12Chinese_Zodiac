@@ -424,8 +424,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  globalLight: {fileID: 619394801}
-  nightVisionDuration: 10
+  pauseTimeDuration: 5
   dashSpeed: 15
   dashDuration: 0.2
   canFly: 1
@@ -614,6 +613,8 @@ MonoBehaviour:
   gameOverUI: {fileID: 2097747020}
   healthSlider: {fileID: 1689192725}
   healthText: {fileID: 219045922}
+  regenAmount: 5
+  regenInterval: 3
 --- !u!1 &39028305
 GameObject:
   m_ObjectHideFlags: 0
@@ -683,7 +684,7 @@ SpriteRenderer:
   m_Size: {x: 0.71, y: 0.810276}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &39028307
@@ -2489,6 +2490,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hiddenBlock: {fileID: 57766224}
+  gongSound: {fileID: 0}
 --- !u!50 &150011323
 Rigidbody2D:
   serializedVersion: 5
@@ -4128,7 +4130,7 @@ SpriteRenderer:
   m_Size: {x: 0.71, y: 0.810276}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &259068147
@@ -4381,6 +4383,7 @@ MonoBehaviour:
   energyBallPrefab: {fileID: 6495179754172688259, guid: c1cd81cae430cfb45ba444bf43a4989e, type: 3}
   firePoint: {fileID: 1581458826}
   flipCooldownTime: 1
+  isPaused: 0
 --- !u!61 &265343017
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5394,7 +5397,7 @@ SpriteRenderer:
   m_Size: {x: 0.71, y: 0.810276}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &291561351
@@ -6385,7 +6388,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5, y: -22}
+  m_AnchoredPosition: {x: 316.4, y: -22}
   m_SizeDelta: {x: 249.9694, y: 91.0005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &481568201
@@ -7007,6 +7010,7 @@ MonoBehaviour:
   energyBallPrefab: {fileID: 6495179754172688259, guid: c1cd81cae430cfb45ba444bf43a4989e, type: 3}
   firePoint: {fileID: 180236953}
   flipCooldownTime: 1
+  isPaused: 0
 --- !u!61 &527412791
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7883,7 +7887,7 @@ SpriteRenderer:
   m_Size: {x: 0.71, y: 0.810276}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &586080052
@@ -8234,7 +8238,7 @@ SpriteRenderer:
   m_Size: {x: 0.71, y: 0.810276}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &593672889
@@ -9379,7 +9383,7 @@ SpriteRenderer:
   m_Size: {x: 0.71, y: 0.810276}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &672097539
@@ -12870,6 +12874,7 @@ MonoBehaviour:
   energyBallPrefab: {fileID: 6495179754172688259, guid: c1cd81cae430cfb45ba444bf43a4989e, type: 3}
   firePoint: {fileID: 2036304984}
   flipCooldownTime: 1
+  isPaused: 0
 --- !u!114 &904649083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13505,7 +13510,7 @@ SpriteRenderer:
   m_Size: {x: 0.71, y: 0.810276}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &999652743
@@ -13789,7 +13794,7 @@ SpriteRenderer:
   m_Size: {x: 0.71, y: 0.810276}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1033623220
@@ -15253,7 +15258,7 @@ SpriteRenderer:
   m_Size: {x: 0.71, y: 0.810276}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1162616691
@@ -15738,7 +15743,7 @@ SpriteRenderer:
   m_Size: {x: 0.71, y: 0.810276}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1227343330
@@ -15825,7 +15830,7 @@ SpriteRenderer:
   m_Size: {x: 0.71, y: 0.810276}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1247910726
@@ -17018,7 +17023,7 @@ SpriteRenderer:
   m_Size: {x: 0.71, y: 0.810276}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1417926767
@@ -17094,6 +17099,7 @@ MonoBehaviour:
   energyBallPrefab: {fileID: 6495179754172688259, guid: c1cd81cae430cfb45ba444bf43a4989e, type: 3}
   firePoint: {fileID: 1998606280}
   flipCooldownTime: 1
+  isPaused: 0
 --- !u!61 &1427639197
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17308,7 +17314,7 @@ SpriteRenderer:
   m_Size: {x: 0.71, y: 0.810276}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1434030224
@@ -19022,7 +19028,7 @@ SpriteRenderer:
   m_Size: {x: 0.71, y: 0.810276}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1539971531
@@ -19669,7 +19675,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5, y: -22}
+  m_AnchoredPosition: {x: -181.7, y: -22}
   m_SizeDelta: {x: 249.9694, y: 91.0005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1634325260
@@ -19692,7 +19698,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Collect Goat
+  m_text: 'Collect Rooster
 
     Go find other '
   m_isRightToLeft: 0
@@ -19842,7 +19848,7 @@ SpriteRenderer:
   m_Size: {x: 0.71, y: 0.810276}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1682500145
@@ -21039,7 +21045,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8, y: -178}
+  m_AnchoredPosition: {x: 283.7, y: -178}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1766890829
@@ -21725,6 +21731,7 @@ MonoBehaviour:
   energyBallPrefab: {fileID: 6495179754172688259, guid: c1cd81cae430cfb45ba444bf43a4989e, type: 3}
   firePoint: {fileID: 1905582694}
   flipCooldownTime: 1
+  isPaused: 0
 --- !u!61 &1824885909
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24603,6 +24610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hiddenBlock: {fileID: 875731946}
+  gongSound: {fileID: 0}
 --- !u!61 &2038027551
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25093,7 +25101,7 @@ SpriteRenderer:
   m_Size: {x: 0.71, y: 0.810276}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &2119266544
@@ -25575,6 +25583,8 @@ MonoBehaviour:
   gameOverUI: {fileID: 0}
   healthSlider: {fileID: 0}
   healthText: {fileID: 0}
+  regenAmount: 5
+  regenInterval: 3
 --- !u!114 &2145984902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25655,8 +25665,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  globalLight: {fileID: 0}
-  nightVisionDuration: 5
+  pauseTimeDuration: 5
   dashSpeed: 15
   dashDuration: 0.2
   canFly: 1

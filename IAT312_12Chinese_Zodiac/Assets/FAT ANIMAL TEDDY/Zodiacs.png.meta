@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Zodiacs_0: 6275480590382818357
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
